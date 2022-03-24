@@ -1,0 +1,282 @@
+@font-face {
+  font-family: "digital-clock-font";
+  src: url("./public/fonts/digital-7.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: rgb(203, 216, 219);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+/* header for mobile view  */
+#m-header {
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  position: absolute;
+  visibility: hidden;
+}
+#layout {
+  background-color: transparent;
+  border-radius: 10px;
+  height: 80%;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 7px 6px 13px -1px rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+#description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0px 0px 10px;
+
+  background: linear-gradient(
+      177deg,
+      rgba(131, 58, 180, 0.4) 0%,
+      rgba(253, 29, 29, 0.4) 50%,
+      rgba(252, 176, 69, 0.4) 100%
+    ),
+    url(./public/images/background.jpg);
+  background-size: cover;
+  width: 50%;
+  font-family: "Pacifico", cursive;
+  font-size: 0.6em;
+  height: 100%;
+}
+
+#description h1 {
+  margin-top: 10px;
+  background-color: rgba(65, 64, 64, 0.644);
+  margin-left: 10%;
+  display: inline;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.877);
+}
+
+#description span {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  border-bottom: solid 2px black;
+  color: rgb(255, 0, 0);
+}
+
+#alarms-list::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  background-color: rgba(44, 44, 44, 0.897);
+  border-radius: 0px 10px 10px 0px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#clock-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#clock {
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "digital-clock-font";
+  padding: 0px;
+  list-style-type: none;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  height: 20%;
+}
+
+#clock li {
+  color: rgba(245, 245, 245, 0.918);
+  padding: 10px;
+  background-color: #00000025;
+  border-radius: 10px;
+  margin: 4px;
+}
+
+#colon {
+  padding: 2px !important;
+  background: none !important;
+  animation: blink 1s step-start 0s infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#setTimer {
+  height: 10%;
+  width: 80%;
+}
+
+#alarms-list {
+  margin-top: 10px;
+  padding-left: 14px;
+  list-style-type: none;
+  /* background-color: yellow; */
+  height: 60%;
+  width: 80%;
+  overflow-y: scroll;
+}
+
+#alarms-list li {
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.15rem;
+  width: 94%;
+  margin-left: 0px;
+  padding: 10px 0px;
+  margin-top: 10px;
+  background-color: rgb(77, 75, 75);
+}
+
+select {
+  border: solid 2px grey;
+  font-size: 1.2rem;
+  padding: 4px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+option {
+  text-align: center;
+}
+
+/* add button css */
+
+input[type="submit"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+input[type="submit"]:focus + label:after {
+  transform: scale(2.2);
+}
+
+label {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.04rem;
+  padding: 0.3rem 2.3rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #000;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 0 0 #000;
+}
+label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: transform 0.3s ease-in;
+  mix-blend-mode: difference;
+  background: radial-gradient(circle at center, #fff 24%, #000 25%, #000 100%);
+}
+label:active {
+  top: 3px;
+  box-shadow: none;
+}
+#audio {
+  visibility: hidden;
+}
+
+/*  */
+
+/* delete button  */
+#del-btn {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 40px;
+  padding: 10px 20px;
+  border: solid 2px black;
+  border-radius: 20px;
+  transition: all ease-in 40ms;
+}
+
+#del-btn:hover {
+  border: solid 1px gold;
+  color: white;
+  background-color: rgba(247, 59, 153, 0.705);
+}
+
+/* Mobile View */
+
+@media screen and (max-width: 900px) {
+  body {
+    justify-content: center;
+  }
+  #m-header {
+    visibility: visible;
+    height: 8%;
+    width: 100%;
+    background-color: rgba(58, 57, 57, 0.664);
+    font-size: 10px;
+    top: 0;
+  }
+  #description {
+    visibility: hidden;
+    width: 0%;
+  }
+  .main {
+    background: linear-gradient(
+        177deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(252, 176, 69, 1) 100%
+      ),
+      url(./public/background1.jpg);
+
+    border-radius: 10px;
+    width: 100%;
+  }
+  #alarms-list li {
+    border-radius: 10px;
+    background-color: rgba(22, 22, 22, 0.808);
+  }
+}

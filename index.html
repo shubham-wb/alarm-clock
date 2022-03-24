@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⏲ Alarm CLock ⏲</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./index.js" defer></script>
+  </head>
+
+  <body>
+  <div id = m-header>
+    <h1>Alarm clock made with love❤  by Shubham </h1></div>
+    <div id = "layout">
+  <div id = "description">
+    <div style = "width: 100%;"><h1>Alarm clock made with love</h1><span>❤</span></div>
+    <h1 >  by Shubham </h1></div>
+  <!--  wrapper class for alram components  -->
+
+    <div class="main">
+      <div id="clock-wrapper">
+        <ul id="clock">
+          <li id="hour">88</li>
+          <li id = "colon">:</li>
+          <li id="minutes">88</li>
+          <li id ="colon">:</li>
+          <li id="seconds">88</li>
+          <li id="ampm">88</li>
+  
+        </ul>
+
+        <form id="SetTimer">
+          <select id="setHour"></select>
+          <select id="setMinutes"></select>
+          <select id ="setampm">
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+          </select>
+          <label for ="btn"> Add</label>
+          <input type="submit" id="btn"/>
+        </form>
+        <ul id="alarms-list"></ul>
+      </div>
+    </div>
+    <audio id = "audio" src ="public/audios/Alarm-ringtone.mp3"></audio>
+</div>
+  </body>
+</html>
