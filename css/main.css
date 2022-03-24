@@ -1,6 +1,6 @@
 @font-face {
   font-family: "digital-clock-font";
-  src: url("./public/fonts/digital-7.ttf");
+  src: url("../fonts/digital-7.ttf");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
@@ -55,7 +55,7 @@ body {
       rgba(253, 29, 29, 0.4) 50%,
       rgba(252, 176, 69, 0.4) 100%
     ),
-    url(./public/images/background.jpg);
+    url(../images/background.jpg);
   background-size: cover;
   width: 50%;
   font-family: "Pacifico", cursive;
